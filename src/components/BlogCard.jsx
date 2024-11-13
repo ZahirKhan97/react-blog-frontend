@@ -1,13 +1,16 @@
 import React from 'react'
 
-const BlogCard = () => {
+const BlogCard = ({blog}) => {
+    const showImage = (img) => {
+       return (img) ? 'http://localhost:8000/uploads/blogs/'+img : 'https://placehold.co/600x400';
+    }
   return (
         <div className="col-12 col-md-2 col-lg-3 mb-4">
             <div className="card border-0 shadow-lg">
-                <img src="https://placehold.co/600x400" alt="" className='card-img-top'/>
+                <img src={showImage(blog.image)} alt="blg-image" className='card-img-top'/>
                 <div className="card-body">
-                    <h2 className='h5'>Dummy Heading</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, qui.</p>
+                    <h2 className='h5'>{blog.title}</h2>
+                    <p>{blog.shortDesc}</p>
                     <div className="d-flex justify-content-between">
                         <a href="#" className='btn btn-dark'>Details</a>
                         <a href="#" className='text-dark'>
