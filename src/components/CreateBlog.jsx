@@ -68,7 +68,7 @@ const CreateBlog = () => {
                             { ...register('title', { required: true }) }
                             type="text"
                             className={`form-control ${errors.title && 'is-invalid'}`}
-                            placeholder='Name' />
+                            placeholder='Enter Title' />
                             {errors.title && <p className='invalid-feedback'>Title field is required</p>}
                     </div>
                     <div className="mb-3">
@@ -76,11 +76,12 @@ const CreateBlog = () => {
                         <textarea 
                             { ...register('shortDesc') }
                             className='form-control'
+                            placeholder='Enter Short Description'
                             cols="30" rows="5"></textarea>
                     </div>
                     <div className="mb-3">
                         <label className='form-label'>Description</label>
-                        <Editor value={html} onChange={onChange} containerProps={{ style: { height: '400px' } }}/>
+                        <Editor placeholder='Enter Description' value={html} onChange={onChange} containerProps={{ style: { height: '500px' } }}/>
                     </div>
                     <div className="mb-3">
                         <label className='form-label'>Image</label>
@@ -92,7 +93,7 @@ const CreateBlog = () => {
                             { ...register('author', { required: true }) }
                             type="text" 
                             className={`form-control ${errors.author && 'is-invalid'}`} 
-                            placeholder='Short Description' />
+                            placeholder='Enter Author' />
                             {errors.author && <p className='invalid-feedback'>Author field is required</p>}
                     </div>
                     <button type='submit' className='btn btn-dark'>Create</button>
